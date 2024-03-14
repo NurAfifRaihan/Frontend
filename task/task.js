@@ -9,6 +9,7 @@ const users = [
   { name: "Afif", age: 25, major: "Engineering" },
   { name: "Asti", age: 28, major: "Business Administration" },
   { name: "Rigel", age: 35, major: "Finance" },
+  { name: "Rapli", age: 29, major: "Digital Marketing" },
   { name: "Sephia", age: 27, major: "Marketing" }
 ];
 
