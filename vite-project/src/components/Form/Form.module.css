@@ -1,0 +1,86 @@
+/* Small Screen */
+.container {
+    margin: 1rem;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .form__left {
+    margin-bottom: 1rem;
+  }
+  
+  .form__title {
+    color: #4361ee;
+    margin-bottom: 1rem;
+    font-size: 2.44rem;
+  }
+
+  .form__border{
+    border: 2px solid pink;
+    padding: 10px; /* Untuk memberi ruang di sekitar konten dalam form */
+    width: 300px;
+  }
+  
+  .form__role {
+    color: #b5179e;
+    margin-bottom: 1rem;
+    font-size: 1.59rem;
+  }
+  
+  .form__description {
+    color: #64748b;
+    margin-bottom: 1rem;
+  }
+  
+  .form__button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #4361ee;
+    color: #fff;
+    width: 300px;
+  }
+  
+  .form__image {
+    max-width: 50%;
+    margin-left: 10rem;
+    height: 300px;
+    border-radius: 25px;
+  }
+  
+  /* Medium Screen */
+  @media (min-width: 768px) {
+    /*
+     * Nothing TODO Here.
+     * We dont change style form. 
+     */
+  }
+  
+  /* Large Screen */
+  @media (min-width: 992px) {
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+  
+    .form {
+      margin: 0 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+  
+    .form__left {
+      flex-basis: 40%;
+    }
+  
+    .form__right {
+      flex-basis: 60%;
+    }
+  }
+  
