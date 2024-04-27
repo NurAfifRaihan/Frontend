@@ -5,7 +5,7 @@ function Counter() {
      * membuat fungsi handleClick
      * dijalankan ketika button di klick
      */
-    function handleClick() {
+    function handleClick() { 
         result = result + 1;
     }
 

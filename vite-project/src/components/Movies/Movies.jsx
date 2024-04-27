@@ -11,7 +11,7 @@ function Movies (){
  * fungsi untuk handle event click 
  * di jalankan  ketika button di klik
  */
-function handleClick() {
+function handleClick() {  
     const movie = {
         id: nanoid(), 
         title: "Jigsaw Spiral",

@@ -2,8 +2,7 @@ import styles from "./Movie.module.css";
 
 function Movie(props){
 
-    const { movie } = props;
-
+    const { movie } = props; 
     return(
         <div className={styles.movie}>
             <img 
