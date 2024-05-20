@@ -4,12 +4,15 @@ import './App.css'
 // import Main from './components/main.jsx';
 // import Footer from './components/footer.jsx';
 import Home from './pages/home.jsx';
+import {Route, Routes} from "react-router-dom";
 
 function Components() {
 
   return(
     <div>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
         {/* <Header />
         <Hello />
         <Main />

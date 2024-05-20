@@ -1,12 +1,11 @@
-import { useState } from 'react';
+
 import Movie from "../Movie/movie"
 import styles from "./Movies.module.css";
-import data from "../../utils/constants/data";
 import { nanoid } from "nanoid"; 
 
-function Movies (){
+function Movies (props){
 
-    const  [movies, setMovies] = useState(data);
+    const {movies, setMovies}= props; 
 /**
  * fungsi untuk handle event click 
  * di jalankan  ketika button di klik
