@@ -2,8 +2,10 @@
 import Hero from "../components/Hero/hero"
 import Movies from "../components/Movies/Movies"
 import Form from "../components/Form/Form"
+import React from 'react';
 import { useState } from "react"
 import data from "../utils/constants/data"
+import Counter from "../components/counter"
 
 function Home (){
     const  [movies, setMovies] = useState(data);
@@ -16,6 +18,10 @@ function Home (){
             </main>
         </>
     )
+
+    // return (
+    //     <Counter />
+    // )
 }
 
 export default Home
