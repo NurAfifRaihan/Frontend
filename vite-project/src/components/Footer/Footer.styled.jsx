@@ -1,16 +1,17 @@
 /* Small Screen */
-.container {
+import styled from "styled-components";
+
+const StyledFooter = styled.footer`
   background-color: #d143ee;
   color: #fff;
   padding: 1rem;
   text-align: center;
-}
 
-.footer__title {
+h2{
   margin-bottom: 1rem;
 }
 
-.footer__author {
+p {
   margin-bottom: 1rem;
 }
 
@@ -29,3 +30,6 @@
    * We dont change styling footer. 
    */
 }
+`;
+
+export default StyledFooter;

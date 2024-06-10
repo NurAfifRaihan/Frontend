@@ -1,5 +1,6 @@
 
 import Movie from "../Movie/movie"
+import Button from "../ui/Button";
 import styles from "./Movies.module.css";
 import { nanoid } from "nanoid"; 
 
@@ -35,7 +36,7 @@ function handleClick() {
                         return <Movie key={movie.id} movie={movie}/>;
                     })}
                 </div>
-                <button onClick={handleClick}>Add Movie</button>
+                <Button onClick={handleClick} variant="primary" full>Add Movie</Button>
             </section>
         </div>
     )

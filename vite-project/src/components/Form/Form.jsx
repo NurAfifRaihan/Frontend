@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { nanoid } from "nanoid";
 import Alert from "../alert/alert";
-import styles from "./Form.module.css";
+import StyledForm from "./Form.styled.jsx";
+import Button from '../ui/Button';
 
 function Form(props) {
     const { movies, setMovies } = props;
@@ -65,65 +66,67 @@ function Form(props) {
     };
 
     return (
-        <div className={styles.container}>
-            <section className={styles.form}>
-                <div className={styles.form__left}>
-                    <img className={styles.form__image} src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/65/2023/10/27/maxresdefault-2-4010764341.jpg" alt="placeholder" />
-                </div>
-                <div className={styles.form__group}>
-                    <h2>Add Movie</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className={styles.form__border}>
-                            <label htmlFor="title">Title:</label>
-                            <input
-                                type="text"
-                                id="title"
-                                value={formData.title}
-                                onChange={handleChange}
-                                className={styles.input}
-                            />
-                            {errors.title && <Alert>Title harus diisi</Alert>}
-                        </div>
-                        <div className={styles.form__border}>
-                            <label htmlFor="year">Year:</label>
-                            <input
-                                type="number"
-                                id="year"
-                                value={formData.year}
-                                onChange={handleChange}
-                                className={styles.input}
-                            />
-                            {errors.year && <Alert>Year harus diisi</Alert>}
-                        </div>
-                        <div className={styles.form__border}>
-                            <label htmlFor="poster">Poster:</label>
-                            <input
-                                type="text"
-                                id="poster"
-                                value={formData.poster}
-                                onChange={handleChange}
-                                className={styles.input}
-                            />
-                            {errors.poster && <Alert>Poster harus diisi</Alert>}
-                        </div>
-                        <div className={styles.form__border}>
-                            <label htmlFor="type">Type:</label>
-                            <input
-                                type="text"
-                                id="type"
-                                value={formData.type}
-                                onChange={handleChange}
-                                className={styles.input}
-                            />
-                            {errors.type && <Alert>Type harus diisi</Alert>}
-                        </div>
-                        <button type="submit" className={styles.form__button}>
-                            Submit
-                        </button>
-                    </form>
-                </div>
-            </section>
-        </div>
+        <StyledForm>
+            <div className="container">
+                <section className="form">
+                    <div className="form__left">
+                        <img className="form__image" src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/65/2023/10/27/maxresdefault-2-4010764341.jpg" alt="placeholder" />
+                    </div>
+                    <div className="form__group">
+                        <h2>Add Movie</h2>
+                        <form onSubmit={handleSubmit}>
+                            <div className="form__border">
+                                <label htmlFor="title">Title:</label>
+                                <input
+                                    type="text"
+                                    id="title"
+                                    value={formData.title}
+                                    onChange={handleChange}
+                                    className="input"
+                                />
+                                {errors.title && <Alert>Title harus diisi</Alert>}
+                            </div>
+                            <div className="form__border">
+                                <label htmlFor="year">Year:</label>
+                                <input
+                                    type="number"
+                                    id="year"
+                                    value={formData.year}
+                                    onChange={handleChange}
+                                    className="input"
+                                />
+                                {errors.year && <Alert>Year harus diisi</Alert>}
+                            </div>
+                            <div className="form__border">
+                                <label htmlFor="poster">Poster:</label>
+                                <input
+                                    type="text"
+                                    id="poster"
+                                    value={formData.poster}
+                                    onChange={handleChange}
+                                    className="input"
+                                />
+                                {errors.poster && <Alert>Poster harus diisi</Alert>}
+                            </div>
+                            <div className="form__border">
+                                <label htmlFor="type">Type:</label>
+                                <input
+                                    type="text"
+                                    id="type"
+                                    value={formData.type}
+                                    onChange={handleChange}
+                                    className="input"
+                                />
+                                {errors.type && <Alert>Type harus diisi</Alert>}
+                            </div>
+                            <div>
+                                <Button type="submit" variant="primary" full>Submit</Button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </StyledForm>
     );
 }
 

@@ -1,4 +1,4 @@
-import styles from "./Footer.module.css";
+import StyledFooter from "./Footer.styled"
 
 function Footer(){
     /**
@@ -6,12 +6,12 @@ function Footer(){
      * memanggilnya menggunakan expresion
      */
     return(
-        <div className={styles.container}>
-            <footer className={styles.footer}>
-                <h2 className={styles.footer__title}>Movie App</h2>
-                <p className={styles.footer__author}>Create by Lurking Choco</p>
+        <StyledFooter>
+            <footer>
+                <h2 >Movie App</h2>
+                <p >Create by Lurking Choco</p>
             </footer>
-        </div>
+        </StyledFooter>
     )
 }
 
