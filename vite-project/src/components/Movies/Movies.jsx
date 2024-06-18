@@ -30,7 +30,7 @@ function handleClick() {
         
         <div className={styles.container}>
             <section className={styles.movies}>
-                <h2 className={styles.movies__title}>Lates Movies</h2>
+                
                 <div className={styles.movie__container}>
                     {movies.map((movie) =>{
                         return <Movie key={movie.id} movie={movie}/>;
