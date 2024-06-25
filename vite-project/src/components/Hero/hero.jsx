@@ -57,7 +57,7 @@ function Hero() {
           </div>
       
           <div className="hero__right">
-            <img src={`https://image.tmdb.org/t/p/w300/${movie.backdrop_path}`} alt="placeholder" />
+            <img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt="placeholder" />
           </div>
         </section>
       </div>

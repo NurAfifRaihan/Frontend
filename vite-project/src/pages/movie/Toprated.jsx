@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Hero from "../../components/Hero/hero";
 import Movies from "../../components/Movies/Movies"
 import styled from "styled-components";
+import ENDPOINTS from "../../utils/constants/endpoints";
 
 const StyledH2 = styled.h2`
 margin-bottom: 1rem;
@@ -10,9 +11,6 @@ margin-bottom: 1rem;
   color: #4361ee;
 `;
 function TopRated(){
-
-    const API_KEY = import.meta.env.VITE_API_KEY;
-    const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -22,7 +20,7 @@ function TopRated(){
 
     // Membuat fungsi getTopRated: mengambil movies populer.
     async function getTopRated() {
-        const response = await axios.get(URL);
+        const response = await axios.get(ENDPOINTS.TOPRATED);
         setMovies(response.data.results);
     }
     return(

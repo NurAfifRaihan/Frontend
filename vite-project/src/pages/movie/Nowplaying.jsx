@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Hero from "../../components/Hero/hero";
 import Movies from "../../components/Movies/Movies"
 import styled from "styled-components";
+import ENDPOINTS from "../../utils/constants/endpoints";
 
 const StyledH2 = styled.h2`
 margin-bottom: 1rem;
@@ -10,8 +11,6 @@ margin-bottom: 1rem;
   color: #4361ee;
 `;
 function NowPlayingMovie(){
-    const API_KEY = import.meta.env.VITE_API_KEY;
-    const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -21,7 +20,7 @@ function NowPlayingMovie(){
 
     // Membuat fungsi getNowPlaying: mengambil movies populer.
     async function getNowPlaying() {
-        const response = await axios.get(URL);
+        const response = await axios.get(ENDPOINTS.NOWPLAYING);
         setMovies(response.data.results);
     }
     return(

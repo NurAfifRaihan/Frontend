@@ -3,6 +3,7 @@ import axios from 'axios';
 import Hero from "../../components/Hero/hero";
 import Movies from "../../components/Movies/Movies"
 import styled from "styled-components";
+import ENDPOINTS from '../../utils/constants/endpoints';
 
 
 const StyledH2 = styled.h2`
@@ -11,8 +12,7 @@ margin-bottom: 1rem;
   color: #4361ee;
 `;
 function PopularMovie() {
-    const API_KEY = import.meta.env.VITE_API_KEY;
-    const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
+
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ function PopularMovie() {
 
     // Membuat fungsi getPopularMovies: mengambil movies populer.
     async function getPopularMovies() {
-        const response = await axios.get(URL);
+        const response = await axios.get(ENDPOINTS.POPULAR);
         setMovies(response.data.results);
     }
 

@@ -32,10 +32,9 @@ const StyledHero = styled.div`
   }
 
   img {
-    max-width: 50%;
-    margin-left: 10rem;
-    width: 200px;
     border-radius: 25px;
+    max-width: 100%;
+    height: auto;
   }
 
   .hero__button {

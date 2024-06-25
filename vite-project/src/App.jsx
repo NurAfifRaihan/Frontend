@@ -13,6 +13,7 @@ import Layout from './Layout/index.jsx';
 import { ThemeProvider } from 'styled-components';
 import theme from './utils/constants/theme.js';
 import GlobalStyle from './components/GlobalStyle/index.jsx';
+import Detail from './pages/movie/Detail.jsx';
 
 
 function Components() {
@@ -28,6 +29,7 @@ function Components() {
             <Route path='/movie/popular' element={<Popular/>}/>
             <Route path='/movie/now' element={<NowPlayingMovie/>}/>
             <Route path='/movie/top' element={<TopRated/>}/>
+            <Route path="/movie/:id" element={<Detail/>} />
           </Routes>
         </Layout>
       </ThemeProvider>
