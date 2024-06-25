@@ -3,11 +3,11 @@ import Button from "../ui/Button";
 import { useEffect, useState } from "react";
 import StyledHero from "./Hero.styled.jsx";
 import axios from 'axios';
+import ENDPOINTS from "../../utils/constants/endpoints.js";
 
 
 function Hero() {
   const [movie, setMovie] = useState("");
-  const API_KEY = import.meta.env.VITE_API_KEY;
   const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
   const idTrailer = movie && movie.videos.results[0].key;
 
@@ -19,10 +19,7 @@ function Hero() {
       const trendingMovie = await fetchTrendingMovies();
       const id = trendingMovie.id;
 
-      const params = `?api_key=${API_KEY}&append_to_response=videos`;
-      const URL = `https://api.themoviedb.org/3/movie/${id}${params}`;
-
-      const response = await axios(URL);
+      const response = await axios(ENDPOINTS.HERO(id));
 
       // Update movie state using api response
       setMovie(response.data);
@@ -30,10 +27,8 @@ function Hero() {
     fetchDetailMovie();
     // Fetch trending movies code here.
     async function fetchTrendingMovies() {
-      const API_KEY = import.meta.env.VITE_API_KEY;
-      const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
   
-      const response = await axios.get(URL);
+      const response = await axios.get(ENDPOINTS.TRENDING);
       const firstMovie = response.data.results[0];
       return firstMovie;
     }
