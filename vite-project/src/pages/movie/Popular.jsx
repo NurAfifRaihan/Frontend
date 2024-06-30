@@ -1,41 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import Hero from "../../components/Hero/hero";
-import Movies from "../../components/Movies/Movies"
+import Movies from "../../components/Movies/Movies";
 import styled from "styled-components";
 import ENDPOINTS from '../../utils/constants/endpoints';
-
+import MoviesContext from '../../components/contex/MoviesContex';
 
 const StyledH2 = styled.h2`
-margin-bottom: 1rem;
+  margin-bottom: 1rem;
   font-size: 2.44rem;
   color: #4361ee;
 `;
+
 function PopularMovie() {
+    const { setMovies } = useContext(MoviesContext);
 
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        // Memanggil function getPopularMovies
-        getPopularMovies();
-    });
-
-    // Membuat fungsi getPopularMovies: mengambil movies populer.
-    async function getPopularMovies() {
-        const response = await axios.get(ENDPOINTS.POPULAR);
-        setMovies(response.data.results);
-    }
+    useEffect(function() {
+        async function fetchPopularMovies() {
+            const response = await axios.get(ENDPOINTS.POPULAR);
+            setMovies(response.data.results);
+        }
+        fetchPopularMovies();
+    }, [setMovies]);
 
     return (
-        
         <>
             <Hero />
             <StyledH2>
-            <h2>Popular Movie</h2>
+                Popular Movie
             </StyledH2>
-            <Movies movies={movies} />
+            <Movies title="Popular Movies"/>
         </>
-       
     );
 }
 

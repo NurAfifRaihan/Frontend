@@ -9,8 +9,10 @@ function Movie(props){
     return(
         <StyledMovie>
             <div>
-                <img src={movie.poster || `https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
-                <Link to={`/movie/${movie.id}`}><h3>{movie.title}</h3></Link>
+                <Link to={`/movie/${movie.id}`}>
+                    <img src={movie.poster || `https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+                </Link>
+                <h3>{movie.title}</h3>
                 
                 <p>{year}</p>                    
             </div>

@@ -13,16 +13,14 @@ margin-bottom: 1rem;
 `;
 
 function Home (){
-    const  [movies, setMovies] = useState(data);
     return(
         <>
             <main>
                 <Hero />
                 <StyledH2>
-                <h2>Lates Movie</h2>
+                <h2></h2>
                 </StyledH2>
-                <Movies movies={movies} setMovies={setMovies}></Movies>
-                <Form movies={movies} setMovies={setMovies}/>
+                <Movies ></Movies>
             </main>
         </>
     )

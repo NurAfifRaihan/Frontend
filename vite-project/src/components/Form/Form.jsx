@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { nanoid } from "nanoid";
 import Alert from "../alert/alert";
 import StyledForm from "./Form.styled.jsx";
 import Button from '../ui/Button';
+import { useNavigate } from 'react-router-dom';
+import MoviesContext from '../contex/MoviesContex.jsx';
 
-function Form(props) {
-    const { movies, setMovies } = props;
-
+function Form() {
+    //use movies context and get context value
+    const { movies, setMovies } = useContext(MoviesContext);
+    const navigation = useNavigate();
     const [formData, setFormData] = useState({
         title: '',
         year: '',
@@ -38,6 +41,8 @@ function Form(props) {
             ...formData
         };
         setMovies([...movies, movie]);
+
+        navigation("/");
     };
 
     const handleSubmit = (e) => {

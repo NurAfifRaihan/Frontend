@@ -1,45 +1,23 @@
-
-import Movie from "../Movie/movie"
-import Button from "../ui/Button";
+import { useContext } from "react";
+import Movie from "../Movie/movie";
 import styles from "./Movies.module.css";
-import { nanoid } from "nanoid"; 
+import { nanoid } from "nanoid";
+import MoviesContext from "../contex/MoviesContex";
 
-function Movies (props){
-
-    const {movies, setMovies}= props; 
-/**
- * fungsi untuk handle event click 
- * di jalankan  ketika button di klik
- */
-function handleClick() {  
-    const movie = {
-        id: nanoid(), 
-        title: "Jigsaw Spiral",
-        year: 2021, 
-        type: "Movie",
-        poster: " https://picsum.photos/300/400",
-    };
-    /**
-     * update state movies : set Movies
-     * melakukan teknik spread untuk copy dan marge array
-     */
-    setMovies([...movies, movie]);
-}
-
+function Movies({ title = "Latest Movies" }) {
+    const { movies } = useContext(MoviesContext);
     return (
-        
         <div className={styles.container}>
             <section className={styles.movies}>
-                
+                <h2 className={styles.movies_title}>{title}</h2>
                 <div className={styles.movie__container}>
-                    {movies.map((movie) =>{
-                        return <Movie key={movie.id} movie={movie}/>;
-                    })}
+                    {movies.map((movie) => (
+                        <Movie key={movie.id || nanoid()} movie={movie} />
+                    ))}
                 </div>
-                <Button onClick={handleClick} variant="primary" full>Add Movie</Button>
             </section>
         </div>
-    )
+    );
 }
 
 export default Movies;
