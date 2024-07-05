@@ -9,7 +9,7 @@ function Home (){
         <>
             <main>
                 <Hero />
-                <Movies ></Movies>
+                <Movies></Movies>
             </main>
         </>
     )

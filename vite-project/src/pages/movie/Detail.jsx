@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom";
 import DetailMovie from "../../components/Detailmovie/Index";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Movies from "../../components/Movies/Movies"
 import axios from "axios";
 import ENDPOINTS from "../../utils/constants/endpoints";
+import { useContext } from "react";
+import MoviesContext from "../../components/contex/MoviesContex";
 
 
 
 function Detail(){
     const { id } = useParams();
+    const {setMovies} = useContext(MoviesContext)
   // Create movies state
-  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     // Fetch recommendation movies
@@ -27,7 +29,7 @@ function Detail(){
   return (
     <>
       <DetailMovie />
-      <Movies movies={movies} />
+      <Movies />
     </>
   );
 
